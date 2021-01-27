@@ -33,6 +33,7 @@
 		27CF599125C0421E00F83297 /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CF598C25C0421E00F83297 /* backItemImage@2x.png */; };
 		27CF599225C0421E00F83297 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF598D25C0421E00F83297 /* WKWebViewController.m */; };
 		27CF599325C0421E00F83297 /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 27CF598E25C0421E00F83297 /* WKJSPOST.html */; };
+		27CF599625C180DE00F83297 /* SureCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF599425C180DE00F83297 /* SureCustomActionSheet.m */; };
 		404D33B023995F94000E0652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D33AF23995F94000E0652 /* AppDelegate.m */; };
 		404D33B323995F94000E0652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D33B223995F94000E0652 /* ViewController.m */; };
 		404D33B623995F94000E0652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404D33B423995F94000E0652 /* Main.storyboard */; };
@@ -166,6 +167,8 @@
 		27CF598D25C0421E00F83297 /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		27CF598E25C0421E00F83297 /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
 		27CF598F25C0421E00F83297 /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		27CF599425C180DE00F83297 /* SureCustomActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SureCustomActionSheet.m; sourceTree = "<group>"; };
+		27CF599525C180DE00F83297 /* SureCustomActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureCustomActionSheet.h; sourceTree = "<group>"; };
 		404D33AB23995F94000E0652 /* Sikkimbet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sikkimbet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404D33AE23995F94000E0652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		404D33AF23995F94000E0652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 		404D33AD23995F94000E0652 /* AFWKWebView */ = {
 			isa = PBXGroup;
 			children = (
+				27CF599525C180DE00F83297 /* SureCustomActionSheet.h */,
+				27CF599425C180DE00F83297 /* SureCustomActionSheet.m */,
 				27CF598A25C0421E00F83297 /* WkwebView */,
 				27CF598625C03F6700F83297 /* WMDragView */,
 				26E7545923A7938F00C2B447 /* AFNetworking */,
@@ -741,6 +746,7 @@
 				40BF3D1C23A00BE400131821 /* SDAssociatedObject.m in Sources */,
 				26E34ED123A20CBD004C2455 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				40BF3CF723A00BE400131821 /* SDDiskCache.m in Sources */,
+				27CF599625C180DE00F83297 /* SureCustomActionSheet.m in Sources */,
 				40BF3CFA23A00BE400131821 /* SDWebImageDownloaderConfig.m in Sources */,
 				40BF3D0623A00BE400131821 /* SDImageCacheDefine.m in Sources */,
 				40BF3CF323A00BE400131821 /* SDWebImagePrefetcher.m in Sources */,

@@ -13,6 +13,7 @@
 #import <WebKit/WKWebView.h>
 #import <WebKit/WebKit.h>
 #import "WMDragView.h"
+#import "SureCustomActionSheet.h"
 
 typedef enum{
     loadWebURLString = 0,
@@ -44,6 +45,9 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 @property (nonatomic)UIBarButtonItem* closeButtonItem;
 
 @property(nonatomic,strong)WMDragView *dragView;
+@property (nonatomic, strong) UIView *headView;
+@property (nonatomic, strong) NSMutableArray *dataArr;
+
 @end
 
 @implementation WKWebViewController
@@ -546,11 +550,10 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     self.dragView.layer.borderColor = [UIColor purpleColor].CGColor;
 
     __weak typeof(self) weakSelf = self;
-
     self.dragView.clickDragViewBlock = ^(WMDragView *dragView){
-        
-        NSLog(@"clickDragViewBlock");
-        
+//        [weakSelf actionSheepView];
+        [weakSelf showUIAlertController];
+//        NSLog(@"clickDragViewBlock");
     };
 
     self.dragView.beginDragBlock = ^(WMDragView *dragView) {
@@ -566,5 +569,106 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     };
 }
 
+
+
+/**
+ *  系统 - UIAlertController demo
+ */
+- (IBAction)showUIAlertController {
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"]; ; // 获取项目版本号
+    NSString *versionStr = [NSString stringWithFormat:@"Sikkimbet %@", version];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:versionStr message:nil preferredStyle: UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"UIAlertController - 取消");
+    }];
+    UIAlertAction *aa1 = [UIAlertAction actionWithTitle:@"首页" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-");
+    }];
+    UIAlertAction *aa2 = [UIAlertAction actionWithTitle:@"网络诊断" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-");
+    }];
+    UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-");
+    }];
+    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清楚缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-");
+    }];
+    UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-");
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:aa1];
+    [alertController addAction:aa2];
+    [alertController addAction:aa3];
+    [alertController addAction:aa4];
+    [alertController addAction:aa5];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+- (void)actionSheepView {
+    __weak typeof(self) weakSelf = self;
+       SureCustomActionSheet *optionsView = [[SureCustomActionSheet alloc] initWithTitleView:self.headView optionsArr:self.dataArr cancelTitle:@"取消" selectedBlock:^(NSInteger index) {
+           NSString *optionsStr = weakSelf.dataArr[index];
+           if ([optionsStr isEqualToString:@"苹果地图"]) {
+               [weakSelf openAppleMap];
+           } else if ([optionsStr isEqualToString:@"百度地图"]) {
+               
+           } else if ([optionsStr isEqualToString:@"高德地图"]) {
+               
+               
+           }
+       } cancelBlock:^{
+           
+       }];
+       
+       [self.view addSubview:optionsView];
+}
+
+
+- (void)openAppleMap {
+    
+}
+
+- (UIView*)headView {
+    if (!_headView) {
+        _headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 20, 35)];
+        _headView.backgroundColor = [UIColor whiteColor];
+        
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"]; ; // 获取项目版本号
+        NSString *versionStr = [NSString stringWithFormat:@"Sikkimbet %@", version];
+        
+        UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, self.view.bounds.size.width - 20, 30)];
+        titleLabel.text = versionStr;
+        titleLabel.font = [UIFont systemFontOfSize:12.0];
+        titleLabel.textColor = [UIColor colorWithRed:73/255.0 green:75/255.0 blue:90/255.0 alpha:1];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_headView addSubview:titleLabel];
+        
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 35, self.view.bounds.size.width - 20, .5)];
+        line.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
+        [_headView addSubview:line];
+    }
+    return _headView;
+}
+
+- (NSMutableArray*)dataArr {
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc]init];
+        [_dataArr addObject:@"首页"];
+        [_dataArr addObject:@"网络诊断"];
+        [_dataArr addObject:@"选择线路"];
+        [_dataArr addObject:@"清楚缓存"];
+        [_dataArr addObject:@"以浏览器开启"];
+    }
+    return _dataArr;
+}
 
 @end
