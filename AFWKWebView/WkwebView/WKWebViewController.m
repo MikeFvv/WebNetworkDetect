@@ -599,7 +599,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         [weakSelf reloadWebView];
     }];
     UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"-");
+        [weakSelf skipToSafari];
     }];
     
     [alertController addAction:cancelAction];
@@ -610,6 +610,18 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [alertController addAction:aa5];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)skipToSafari
+{
+   NSURL *url = [NSURL URLWithString:@"https://www.sikkimbet.vip/"];
+    
+    [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
+    //成功后的回调
+        if (!success) {
+            //失败后的回调
+        }
+    }];
 }
 
 - (void)reloadWebView {
