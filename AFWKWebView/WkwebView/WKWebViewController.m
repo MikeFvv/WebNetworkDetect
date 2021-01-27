@@ -582,20 +582,21 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:versionStr message:nil preferredStyle: UIAlertControllerStyleActionSheet];
     
+    __weak typeof(self) weakSelf = self;
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"UIAlertController - 取消");
     }];
     UIAlertAction *aa1 = [UIAlertAction actionWithTitle:@"首页" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"-");
+        [weakSelf reloadWebView];
     }];
     UIAlertAction *aa2 = [UIAlertAction actionWithTitle:@"网络诊断" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
     }];
     UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"-");
+        [weakSelf reloadWebView];
     }];
     UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清楚缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"-");
+        [weakSelf reloadWebView];
     }];
     UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
@@ -611,6 +612,16 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void)reloadWebView {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.wkWebView reload];
+//    });
+    
+    /// 强制刷新
+    [self.wkWebView evaluateJavaScript:[NSString stringWithFormat:@"javascript:window.location.reload(true);"] completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+
+    }];
+}
 
 - (void)actionSheepView {
     __weak typeof(self) weakSelf = self;
