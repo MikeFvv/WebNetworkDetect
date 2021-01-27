@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		268BE94D23ACBDEE001E5A10 /* XHNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 268BE94B23ACBDEE001E5A10 /* XHNetworkCache.m */; };
 		26E34ED123A20CBD004C2455 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E34EB823A20CBC004C2455 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		26E34ED223A20CBD004C2455 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E34EC123A20CBC004C2455 /* ViewController+MASAdditions.m */; };
 		26E34ED323A20CBD004C2455 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E34EC523A20CBC004C2455 /* MASCompositeConstraint.m */; };
@@ -33,9 +32,18 @@
 		27CF599125C0421E00F83297 /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CF598C25C0421E00F83297 /* backItemImage@2x.png */; };
 		27CF599225C0421E00F83297 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF598D25C0421E00F83297 /* WKWebViewController.m */; };
 		27CF599325C0421E00F83297 /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 27CF598E25C0421E00F83297 /* WKJSPOST.html */; };
-		27CF599625C180DE00F83297 /* SureCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF599425C180DE00F83297 /* SureCustomActionSheet.m */; };
+		27CF599925C1943A00F83297 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CF599825C1943A00F83297 /* CoreTelephony.framework */; };
+		27CF59AA25C1945B00F83297 /* LDNetTraceRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF599D25C1945B00F83297 /* LDNetTraceRoute.m */; };
+		27CF59AB25C1945B00F83297 /* LDNetTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF599E25C1945B00F83297 /* LDNetTimer.m */; };
+		27CF59AC25C1945B00F83297 /* LDSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF599F25C1945B00F83297 /* LDSimplePing.m */; };
+		27CF59AD25C1945B00F83297 /* LDNetPing.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF59A225C1945B00F83297 /* LDNetPing.m */; };
+		27CF59AE25C1945B00F83297 /* LDNetGetAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF59A425C1945B00F83297 /* LDNetGetAddress.m */; };
+		27CF59AF25C1945B00F83297 /* LDNetDiagnoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF59A525C1945B00F83297 /* LDNetDiagnoService.m */; };
+		27CF59B025C1945B00F83297 /* LDNetConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF59A925C1945B00F83297 /* LDNetConnect.m */; };
+		27CF59B225C1953C00F83297 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CF59B125C1953C00F83297 /* libresolv.tbd */; };
+		27CF59B525C19A6A00F83297 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF59B325C19A6A00F83297 /* BaseNavigationController.m */; };
 		404D33B023995F94000E0652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D33AF23995F94000E0652 /* AppDelegate.m */; };
-		404D33B323995F94000E0652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D33B223995F94000E0652 /* ViewController.m */; };
+		404D33B323995F94000E0652 /* NetworkDetectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D33B223995F94000E0652 /* NetworkDetectController.m */; };
 		404D33B623995F94000E0652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404D33B423995F94000E0652 /* Main.storyboard */; };
 		404D33B823995F96000E0652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404D33B723995F96000E0652 /* Assets.xcassets */; };
 		404D33BB23995F96000E0652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404D33B923995F96000E0652 /* LaunchScreen.storyboard */; };
@@ -107,12 +115,9 @@
 		40BF3D1A23A00BE400131821 /* NSBezierPath+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF3CD723A00BE300131821 /* NSBezierPath+RoundedCorners.m */; };
 		40BF3D1B23A00BE400131821 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF3CD823A00BE300131821 /* UIColor+HexString.m */; };
 		40BF3D1C23A00BE400131821 /* SDAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF3CD923A00BE300131821 /* SDAssociatedObject.m */; };
-		40C3F4FE23A2B03000465319 /* UIView+Extionsiton.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C3F4F823A2B03000465319 /* UIView+Extionsiton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		268BE94B23ACBDEE001E5A10 /* XHNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNetworkCache.m; sourceTree = "<group>"; };
-		268BE94C23ACBDEE001E5A10 /* XHNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNetworkCache.h; sourceTree = "<group>"; };
 		26E34EB723A20CBC004C2455 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		26E34EB823A20CBC004C2455 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		26E34EB923A20CBC004C2455 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -167,13 +172,30 @@
 		27CF598D25C0421E00F83297 /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		27CF598E25C0421E00F83297 /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
 		27CF598F25C0421E00F83297 /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
-		27CF599425C180DE00F83297 /* SureCustomActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SureCustomActionSheet.m; sourceTree = "<group>"; };
-		27CF599525C180DE00F83297 /* SureCustomActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureCustomActionSheet.h; sourceTree = "<group>"; };
+		27CF599825C1943A00F83297 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		27CF599B25C1945B00F83297 /* LDNetDiagnoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetDiagnoService.h; sourceTree = "<group>"; };
+		27CF599C25C1945B00F83297 /* LDNetGetAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetGetAddress.h; sourceTree = "<group>"; };
+		27CF599D25C1945B00F83297 /* LDNetTraceRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetTraceRoute.m; sourceTree = "<group>"; };
+		27CF599E25C1945B00F83297 /* LDNetTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetTimer.m; sourceTree = "<group>"; };
+		27CF599F25C1945B00F83297 /* LDSimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSimplePing.m; sourceTree = "<group>"; };
+		27CF59A025C1945B00F83297 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		27CF59A125C1945B00F83297 /* LDNetConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetConnect.h; sourceTree = "<group>"; };
+		27CF59A225C1945B00F83297 /* LDNetPing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetPing.m; sourceTree = "<group>"; };
+		27CF59A325C1945B00F83297 /* LDNetTraceRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetTraceRoute.h; sourceTree = "<group>"; };
+		27CF59A425C1945B00F83297 /* LDNetGetAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetGetAddress.m; sourceTree = "<group>"; };
+		27CF59A525C1945B00F83297 /* LDNetDiagnoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetDiagnoService.m; sourceTree = "<group>"; };
+		27CF59A625C1945B00F83297 /* LDNetTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetTimer.h; sourceTree = "<group>"; };
+		27CF59A725C1945B00F83297 /* LDSimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSimplePing.h; sourceTree = "<group>"; };
+		27CF59A825C1945B00F83297 /* LDNetPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNetPing.h; sourceTree = "<group>"; };
+		27CF59A925C1945B00F83297 /* LDNetConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNetConnect.m; sourceTree = "<group>"; };
+		27CF59B125C1953C00F83297 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		27CF59B325C19A6A00F83297 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		27CF59B425C19A6A00F83297 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		404D33AB23995F94000E0652 /* Sikkimbet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sikkimbet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404D33AE23995F94000E0652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		404D33AF23995F94000E0652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		404D33B123995F94000E0652 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		404D33B223995F94000E0652 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		404D33B123995F94000E0652 /* NetworkDetectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkDetectController.h; sourceTree = "<group>"; };
+		404D33B223995F94000E0652 /* NetworkDetectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkDetectController.m; sourceTree = "<group>"; };
 		404D33B523995F94000E0652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		404D33B723995F96000E0652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		404D33BA23995F96000E0652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -317,8 +339,6 @@
 		40BF3CD723A00BE300131821 /* NSBezierPath+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+RoundedCorners.m"; sourceTree = "<group>"; };
 		40BF3CD823A00BE300131821 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		40BF3CD923A00BE300131821 /* SDAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAssociatedObject.m; sourceTree = "<group>"; };
-		40C3F4F523A2B03000465319 /* UIView+Extionsiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extionsiton.h"; sourceTree = "<group>"; };
-		40C3F4F823A2B03000465319 /* UIView+Extionsiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extionsiton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +346,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CF59B225C1953C00F83297 /* libresolv.tbd in Frameworks */,
+				27CF599925C1943A00F83297 /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,11 +443,43 @@
 			path = WkwebView;
 			sourceTree = "<group>";
 		};
+		27CF599725C1943A00F83297 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27CF59B125C1953C00F83297 /* libresolv.tbd */,
+				27CF599825C1943A00F83297 /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27CF599A25C1945B00F83297 /* LDNetDiagnoService */ = {
+			isa = PBXGroup;
+			children = (
+				27CF599B25C1945B00F83297 /* LDNetDiagnoService.h */,
+				27CF599C25C1945B00F83297 /* LDNetGetAddress.h */,
+				27CF599D25C1945B00F83297 /* LDNetTraceRoute.m */,
+				27CF599E25C1945B00F83297 /* LDNetTimer.m */,
+				27CF599F25C1945B00F83297 /* LDSimplePing.m */,
+				27CF59A025C1945B00F83297 /* Route.h */,
+				27CF59A125C1945B00F83297 /* LDNetConnect.h */,
+				27CF59A225C1945B00F83297 /* LDNetPing.m */,
+				27CF59A325C1945B00F83297 /* LDNetTraceRoute.h */,
+				27CF59A425C1945B00F83297 /* LDNetGetAddress.m */,
+				27CF59A525C1945B00F83297 /* LDNetDiagnoService.m */,
+				27CF59A625C1945B00F83297 /* LDNetTimer.h */,
+				27CF59A725C1945B00F83297 /* LDSimplePing.h */,
+				27CF59A825C1945B00F83297 /* LDNetPing.h */,
+				27CF59A925C1945B00F83297 /* LDNetConnect.m */,
+			);
+			path = LDNetDiagnoService;
+			sourceTree = "<group>";
+		};
 		404D33A223995F94000E0652 = {
 			isa = PBXGroup;
 			children = (
 				404D33AD23995F94000E0652 /* AFWKWebView */,
 				404D33AC23995F94000E0652 /* Products */,
+				27CF599725C1943A00F83297 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,8 +494,7 @@
 		404D33AD23995F94000E0652 /* AFWKWebView */ = {
 			isa = PBXGroup;
 			children = (
-				27CF599525C180DE00F83297 /* SureCustomActionSheet.h */,
-				27CF599425C180DE00F83297 /* SureCustomActionSheet.m */,
+				27CF599A25C1945B00F83297 /* LDNetDiagnoService */,
 				27CF598A25C0421E00F83297 /* WkwebView */,
 				27CF598625C03F6700F83297 /* WMDragView */,
 				26E7545923A7938F00C2B447 /* AFNetworking */,
@@ -451,12 +504,10 @@
 				40BF3C4723A0049D00131821 /* Resources */,
 				404D33AE23995F94000E0652 /* AppDelegate.h */,
 				404D33AF23995F94000E0652 /* AppDelegate.m */,
-				404D33B123995F94000E0652 /* ViewController.h */,
-				404D33B223995F94000E0652 /* ViewController.m */,
-				268BE94C23ACBDEE001E5A10 /* XHNetworkCache.h */,
-				268BE94B23ACBDEE001E5A10 /* XHNetworkCache.m */,
-				40C3F4F523A2B03000465319 /* UIView+Extionsiton.h */,
-				40C3F4F823A2B03000465319 /* UIView+Extionsiton.m */,
+				27CF59B425C19A6A00F83297 /* BaseNavigationController.h */,
+				27CF59B325C19A6A00F83297 /* BaseNavigationController.m */,
+				404D33B123995F94000E0652 /* NetworkDetectController.h */,
+				404D33B223995F94000E0652 /* NetworkDetectController.m */,
 				404D33B423995F94000E0652 /* Main.storyboard */,
 				404D33B723995F96000E0652 /* Assets.xcassets */,
 				404D33B923995F96000E0652 /* LaunchScreen.storyboard */,
@@ -719,7 +770,7 @@
 				40BF3CF623A00BE400131821 /* SDImageIOCoder.m in Sources */,
 				40BF3CF223A00BE400131821 /* SDWebImageError.m in Sources */,
 				26E34ED323A20CBD004C2455 /* MASCompositeConstraint.m in Sources */,
-				404D33B323995F94000E0652 /* ViewController.m in Sources */,
+				404D33B323995F94000E0652 /* NetworkDetectController.m in Sources */,
 				40BF3D0723A00BE400131821 /* UIImage+MemoryCacheCost.m in Sources */,
 				40BF3D0523A00BE400131821 /* SDImageGraphics.m in Sources */,
 				26E7547023A7938F00C2B447 /* AFURLResponseSerialization.m in Sources */,
@@ -732,12 +783,14 @@
 				40BF3CDD23A00BE400131821 /* SDImageCoder.m in Sources */,
 				40BF3D1923A00BE400131821 /* SDAsyncBlockOperation.m in Sources */,
 				40BF3CDB23A00BE400131821 /* NSImage+Compatibility.m in Sources */,
+				27CF59AC25C1945B00F83297 /* LDSimplePing.m in Sources */,
 				26E7546E23A7938F00C2B447 /* YYKVStorage.m in Sources */,
-				40C3F4FE23A2B03000465319 /* UIView+Extionsiton.m in Sources */,
+				27CF59B525C19A6A00F83297 /* BaseNavigationController.m in Sources */,
 				40BF3CDC23A00BE400131821 /* SDAnimatedImageView+WebCache.m in Sources */,
 				40BF3CDA23A00BE400131821 /* SDImageHEICCoder.m in Sources */,
 				40BF3D1423A00BE400131821 /* SDDeviceHelper.m in Sources */,
 				40BF3D0123A00BE400131821 /* SDWebImageTransition.m in Sources */,
+				27CF59AE25C1945B00F83297 /* LDNetGetAddress.m in Sources */,
 				40BF3D1023A00BE400131821 /* SDWebImageDownloaderRequestModifier.m in Sources */,
 				404D33BE23995F96000E0652 /* main.m in Sources */,
 				40BF3D1B23A00BE400131821 /* UIColor+HexString.m in Sources */,
@@ -746,7 +799,6 @@
 				40BF3D1C23A00BE400131821 /* SDAssociatedObject.m in Sources */,
 				26E34ED123A20CBD004C2455 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				40BF3CF723A00BE400131821 /* SDDiskCache.m in Sources */,
-				27CF599625C180DE00F83297 /* SureCustomActionSheet.m in Sources */,
 				40BF3CFA23A00BE400131821 /* SDWebImageDownloaderConfig.m in Sources */,
 				40BF3D0623A00BE400131821 /* SDImageCacheDefine.m in Sources */,
 				40BF3CF323A00BE400131821 /* SDWebImagePrefetcher.m in Sources */,
@@ -766,8 +818,8 @@
 				40BF3D0A23A00BE400131821 /* SDWebImageDefine.m in Sources */,
 				40BF3CF023A00BE400131821 /* SDImageAPNGCoder.m in Sources */,
 				40BF3CEB23A00BE400131821 /* UIImage+GIF.m in Sources */,
+				27CF59AD25C1945B00F83297 /* LDNetPing.m in Sources */,
 				40BF3D1A23A00BE400131821 /* NSBezierPath+RoundedCorners.m in Sources */,
-				268BE94D23ACBDEE001E5A10 /* XHNetworkCache.m in Sources */,
 				40BF3D0C23A00BE400131821 /* UIView+WebCacheOperation.m in Sources */,
 				40BF3CF523A00BE400131821 /* NSButton+WebCache.m in Sources */,
 				26E34ED623A20CBD004C2455 /* NSArray+MASAdditions.m in Sources */,
@@ -776,6 +828,7 @@
 				40BF3CFE23A00BE400131821 /* SDWebImageDownloaderOperation.m in Sources */,
 				26E34EDA23A20CBD004C2455 /* MASViewAttribute.m in Sources */,
 				26E34ED523A20CBD004C2455 /* MASLayoutConstraint.m in Sources */,
+				27CF59AA25C1945B00F83297 /* LDNetTraceRoute.m in Sources */,
 				40BF3CEE23A00BE400131821 /* SDMemoryCache.m in Sources */,
 				26E7547423A7938F00C2B447 /* AFNetworkReachabilityManager.m in Sources */,
 				40BF3CE323A00BE400131821 /* SDAnimatedImageView.m in Sources */,
@@ -791,13 +844,16 @@
 				40BF3D0223A00BE400131821 /* SDImageTransformer.m in Sources */,
 				40BF3D0E23A00BE400131821 /* UIImage+Metadata.m in Sources */,
 				26E34ED223A20CBD004C2455 /* ViewController+MASAdditions.m in Sources */,
+				27CF59B025C1945B00F83297 /* LDNetConnect.m in Sources */,
 				40BF3D1723A00BE400131821 /* SDFileAttributeHelper.m in Sources */,
 				40BF3CFB23A00BE400131821 /* SDImageCache.m in Sources */,
+				27CF59AF25C1945B00F83297 /* LDNetDiagnoService.m in Sources */,
 				40BF3CF823A00BE400131821 /* SDAnimatedImageRep.m in Sources */,
 				40BF3D0B23A00BE400131821 /* SDWebImageOptionsProcessor.m in Sources */,
 				40BF3CE223A00BE400131821 /* SDAnimatedImage.m in Sources */,
 				40BF3CFF23A00BE400131821 /* SDImageLoadersManager.m in Sources */,
 				40BF3CF423A00BE400131821 /* SDImageCoderHelper.m in Sources */,
+				27CF59AB25C1945B00F83297 /* LDNetTimer.m in Sources */,
 				26E7546F23A7938F00C2B447 /* YYMemoryCache.m in Sources */,
 				26E34ED823A20CBD004C2455 /* MASConstraint.m in Sources */,
 				26E7547123A7938F00C2B447 /* AFHTTPSessionManager.m in Sources */,
@@ -953,13 +1009,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TSZYWVJCJ;
+				DEVELOPMENT_TEAM = ZR2G99589F;
 				INFOPLIST_FILE = AFWKWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fh.WebNetworkDetect;
 				PRODUCT_NAME = Sikkimbet;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -972,13 +1029,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TSZYWVJCJ;
+				DEVELOPMENT_TEAM = ZR2G99589F;
 				INFOPLIST_FILE = AFWKWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fh.WebNetworkDetect;
 				PRODUCT_NAME = Sikkimbet;
 				TARGETED_DEVICE_FAMILY = "1,2";

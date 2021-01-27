@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "WKWebViewController.h"
+#import "NetworkDetectController.h"
+#import "BaseNavigationController.h"
 
 @interface AppDelegate ()
 ///
@@ -25,9 +27,12 @@
     WKWebViewController *web = [[WKWebViewController alloc] init];
     web.isNavHidden = YES;
     [web loadWebURLSring:@"https://www.sikkimbet.vip/"];
-    
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:web];;
     _webView = web;
+    
+    
+//        ViewController *vcc = [[ViewController alloc] init];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:web];
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     return YES;
