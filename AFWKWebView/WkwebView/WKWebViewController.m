@@ -598,7 +598,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
-    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清楚缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清除缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
     UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
