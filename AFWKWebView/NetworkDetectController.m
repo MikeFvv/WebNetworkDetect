@@ -103,7 +103,7 @@
     _txtView_log.layer.borderWidth = 1.0f;
     _txtView_log.layer.borderColor = [UIColor lightGrayColor].CGColor;
     _txtView_log.backgroundColor = [UIColor whiteColor];
-    _txtView_log.font = [UIFont systemFontOfSize:10.0f];
+    _txtView_log.font = [UIFont systemFontOfSize:12.0f];
     _txtView_log.textAlignment = NSTextAlignmentLeft;
     _txtView_log.scrollEnabled = YES;
     _txtView_log.editable = NO;
