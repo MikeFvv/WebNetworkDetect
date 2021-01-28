@@ -26,7 +26,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     WKWebViewController *web = [[WKWebViewController alloc] init];
     web.isNavHidden = YES;
-    [web loadWebURLSring:@"https://www.sikkimbet.vip/"];
+    [web loadWebURLSring:kWebRequestUrl];
     _webView = web;
     
     

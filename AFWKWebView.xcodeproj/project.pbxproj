@@ -191,6 +191,7 @@
 		27CF59B125C1953C00F83297 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		27CF59B325C19A6A00F83297 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		27CF59B425C19A6A00F83297 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		27CF59B625C29F0B00F83297 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		404D33AB23995F94000E0652 /* Sikkimbet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sikkimbet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404D33AE23995F94000E0652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		404D33AF23995F94000E0652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -508,6 +509,7 @@
 				27CF59B325C19A6A00F83297 /* BaseNavigationController.m */,
 				404D33B123995F94000E0652 /* NetworkDetectController.h */,
 				404D33B223995F94000E0652 /* NetworkDetectController.m */,
+				27CF59B625C29F0B00F83297 /* PrefixHeader.pch */,
 				404D33B423995F94000E0652 /* Main.storyboard */,
 				404D33B723995F96000E0652 /* Assets.xcassets */,
 				404D33B923995F96000E0652 /* LaunchScreen.storyboard */,
@@ -1010,6 +1012,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR2G99589F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AFWKWebView/PrefixHeader.pch";
 				INFOPLIST_FILE = AFWKWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1030,6 +1033,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR2G99589F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AFWKWebView/PrefixHeader.pch";
 				INFOPLIST_FILE = AFWKWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

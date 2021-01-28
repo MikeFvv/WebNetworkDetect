@@ -94,7 +94,7 @@
     _txtfield_dormain.delegate = self;
     _txtfield_dormain.returnKeyType = UIReturnKeyDone;
 //    _txtfield_dormain.text = @"www.baidu.com";
-    _txtfield_dormain.text = @"https://www.sikkimbet.vip/";
+    _txtfield_dormain.text = kWebRequestUrl;
     
     [self.view addSubview:_txtfield_dormain];
 
@@ -108,7 +108,7 @@
     _txtView_log.scrollEnabled = YES;
     _txtView_log.editable = NO;
     _txtView_log.frame =
-        CGRectMake(0.0f, 140.0f, self.view.frame.size.width, self.view.frame.size.height - 120.0f);
+        CGRectMake(0.0f, navHeight + 15 + 10 + 50, self.view.frame.size.width, self.view.frame.size.height - 120.0f);
     [self.view addSubview:_txtView_log];
 
     

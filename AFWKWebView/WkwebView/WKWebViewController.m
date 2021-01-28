@@ -626,7 +626,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 - (void)skipToSafari
 {
-   NSURL *url = [NSURL URLWithString:@"https://www.sikkimbet.vip/"];
+   NSURL *url = [NSURL URLWithString:kWebRequestUrl];
     
     [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
     //成功后的回调
