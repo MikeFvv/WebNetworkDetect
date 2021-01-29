@@ -536,7 +536,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 
 - (void)setUIView {
-    CGFloat width = 60;
+    CGFloat width = 55;
     self.dragView = [[WMDragView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
     [self.dragView.button setBackgroundImage:[UIImage imageNamed:@"drag_btn_back"] forState:UIControlStateNormal];
     self.dragView.backgroundColor = [UIColor redColor];

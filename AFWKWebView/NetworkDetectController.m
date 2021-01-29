@@ -132,7 +132,7 @@
     _isRunning = NO;
     
     
-    [self performSelector:@selector(startNetDiagnosis) withObject:nil afterDelay:1];
+    [self performSelector:@selector(startNetDiagnosis) withObject:nil afterDelay:0.5];
 }
 
 
