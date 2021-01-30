@@ -10,6 +10,7 @@
 #import "WKWebViewController.h"
 #import "NetworkDetectController.h"
 #import "BaseNavigationController.h"
+#import "BAWebViewController.h"
 
 @interface AppDelegate ()
 ///
@@ -24,14 +25,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    WKWebViewController *web = [[WKWebViewController alloc] init];
-    web.isNavHidden = YES;
-    [web loadWebURLSring:kWebRequestUrl];
-    _webView = web;
     
+//    WKWebViewController *web = [[WKWebViewController alloc] init];
+//    web.isNavHidden = YES;
+//    [web loadWebURLSring:kWebRequestUrl];
+//    _webView = web;
+    
+    
+    BAWebViewController *webVC = [BAWebViewController new];
+    webVC.isNavHidden = YES;
+    webVC.ba_web_progressTintColor = [UIColor greenColor];
+    webVC.ba_web_progressTrackTintColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0];
+    [webVC ba_web_loadURLString:kWebRequestUrl];
     
 //        ViewController *vcc = [[ViewController alloc] init];
-    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:web];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:webVC];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
@@ -120,17 +128,11 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
-
-    NSLog(@"url:%@",url);
-
-    NSLog(@"scheme:%@",url.scheme);
-
-    NSLog(@"query:%@",url.query);
-
-    NSLog(@"options:%@",options);
-
+    NSLog(@"url:%@",url);
+    NSLog(@"scheme:%@",url.scheme);
+    NSLog(@"query:%@",url.query);
+    NSLog(@"options:%@",options);
     return YES;
-
 }
 
 

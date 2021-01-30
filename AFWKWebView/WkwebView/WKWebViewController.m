@@ -644,8 +644,4 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 
-- (void)openAppleMap {
-    
-}
-
 @end

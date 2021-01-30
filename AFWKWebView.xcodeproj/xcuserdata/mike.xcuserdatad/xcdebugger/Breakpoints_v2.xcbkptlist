@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B2C429D8-5BD0-4EE8-BAF8-EB0DB87F4361"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AFWKWebView/NetworkDetectController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-startNetDiagnosis"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AA5BDA85-CFA3-4F6F-B493-28CCD1CA065B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -103,31 +87,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AF108438-9928-4BFC-9087-3ECC064E9D43"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AFWKWebView/AppDelegate.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-application:continueUserActivity:restorationHandler:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C4009037-670E-45FC-A839-C38EECABF03C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFWKWebView/AppDelegate.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "-application:continueUserActivity:restorationHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,47 +103,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2F7C66FE-7B18-4326-A559-9009876B1B3D"
+            uuid = "D5851BE8-9253-4977-B424-0231551FC5BD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AFWKWebView/AppDelegate.m"
+            filePath = "AFWKWebView/BAWebViewController/BAWebViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-application:continueUserActivity:restorationHandler:"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-changeNavigatorUserAgent"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2F7C66FE-7B18-4326-A559-9009876B1B3D - c1f94a6d781da9d"
+                  uuid = "D5851BE8-9253-4977-B424-0231551FC5BD - eb2e4025b27df160"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate application:continueUserActivity:restorationHandler:]"
+                  symbolName = "-[BAWebViewController changeNavigatorUserAgent]"
                   moduleName = "Sikkimbet"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mike/Desktop/MMGit/WebNetworkDetect/AFWKWebView/AppDelegate.m"
+                  urlString = "file:///Users/mike/Desktop/MMGit/WebNetworkDetect/AFWKWebView/BAWebViewController/BAWebViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "332">
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "2F7C66FE-7B18-4326-A559-9009876B1B3D - cc2fd45dfa3168ba"
+                  uuid = "D5851BE8-9253-4977-B424-0231551FC5BD - 2c788ca4c01ea2d7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__67-[AppDelegate application:continueUserActivity:restorationHandler:]_block_invoke"
+                  symbolName = "__47-[BAWebViewController changeNavigatorUserAgent]_block_invoke"
                   moduleName = "Sikkimbet"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mike/Desktop/MMGit/WebNetworkDetect/AFWKWebView/AppDelegate.m"
+                  urlString = "file:///Users/mike/Desktop/MMGit/WebNetworkDetect/AFWKWebView/BAWebViewController/BAWebViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "147"
-                  endingLineNumber = "147"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "80">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -183,16 +151,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1B6F4592-9403-452F-8A11-D168B1250401"
+            uuid = "74493246-BCF8-4365-864A-ABD828FFACD8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AFWKWebView/AppDelegate.m"
+            filePath = "AFWKWebView/BAWebViewController/BAWebViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-application:openURL:options:"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-changeNavigatorUserAgent"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BB1A3C8-F856-4E5C-B5D0-57EF3737843C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AFWKWebView/BAWebViewController/BAWebViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-setupUI"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F309A6DE-ED60-4AF8-8A16-39516985FF65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AFWKWebView/BAWebViewController/BAWebViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-setupUI"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38702D15-59EB-476A-B82A-CE2BE2EF6A79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AFWKWebView/BAWebViewController/BAWebViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
