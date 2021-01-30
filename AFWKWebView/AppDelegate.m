@@ -119,6 +119,19 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
+
+    NSLog(@"url:%@",url);
+
+    NSLog(@"scheme:%@",url.scheme);
+
+    NSLog(@"query:%@",url.query);
+
+    NSLog(@"options:%@",options);
+
+    return YES;
+
+}
 
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
