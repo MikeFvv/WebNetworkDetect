@@ -533,11 +533,16 @@
         NSLog(@"UIAlertController - 取消");
     }];
     UIAlertAction *aa1 = [UIAlertAction actionWithTitle:@"首页" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf reloadWebView];
+//        [weakSelf reloadWebView];
+        /*! 重新加载网页 */
+        [weakSelf ba_web_loadURLString:kWebRequestUrl];
     }];
     UIAlertAction *aa2 = [UIAlertAction actionWithTitle:@"网络诊断" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
-        [weakSelf webNetworkDetect];
+        
+        /*! 重新加载网页 */
+        [weakSelf ba_web_loadURLString:kWebRequestUrl];
+//        [weakSelf webNetworkDetect];
     }];
     UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
@@ -586,6 +591,8 @@
 
     }];
 }
+
+
 
 
 @end
