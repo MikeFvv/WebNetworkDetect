@@ -45,11 +45,11 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"网络诊断";
+    self.navigationItem.title = NSLocalizedString(@"网络诊断", nil);
     
     
     // nav按钮  nav文字
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]initWithTitle:@"复制" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBtnAction)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"复制", nil) style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBtnAction)];
     // 字体颜色
     [rightBtn setTintColor:[UIColor blackColor]];
     // 字体大小
@@ -80,7 +80,7 @@
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [btn.titleLabel setNumberOfLines:2];
-    [btn setTitle:@"开始诊断" forState:UIControlStateNormal];
+    [btn setTitle:NSLocalizedString(@"开始诊断", nil) forState:UIControlStateNormal];
     [btn addTarget:self
                   action:@selector(startNetDiagnosis)
         forControlEvents:UIControlEventTouchUpInside];
@@ -142,7 +142,7 @@
     _netDiagnoService.dormain = _txtfield_dormain.text;
     if (!_isRunning) {
         [_indicatorView startAnimating];
-        [btn setTitle:@"停止诊断" forState:UIControlStateNormal];
+        [btn setTitle:NSLocalizedString(@"停止诊断", nil) forState:UIControlStateNormal];
         [btn setBackgroundColor:[UIColor colorWithWhite:0.3 alpha:1.0]];
         [btn setUserInteractionEnabled:FALSE];
         [self performSelector:@selector(delayMethod) withObject:nil afterDelay:3.0f];
@@ -153,7 +153,7 @@
     } else {
         [_indicatorView stopAnimating];
         _isRunning = !_isRunning;
-        [btn setTitle:@"开始诊断" forState:UIControlStateNormal];
+        [btn setTitle:NSLocalizedString(@"开始诊断", nil) forState:UIControlStateNormal];
         [btn setBackgroundColor:[UIColor colorWithWhite:0.3 alpha:1.0]];
         [btn setUserInteractionEnabled:FALSE];
         [self performSelector:@selector(delayMethod) withObject:nil afterDelay:3.0f];
@@ -196,7 +196,7 @@
     //可以保存到文件，也可以通过邮件发送回来
     dispatch_async(dispatch_get_main_queue(), ^{
         [_indicatorView stopAnimating];
-        [btn setTitle:@"开始诊断" forState:UIControlStateNormal];
+        [btn setTitle:NSLocalizedString(@"开始诊断", nil) forState:UIControlStateNormal];
         _isRunning = NO;
     });
 }
