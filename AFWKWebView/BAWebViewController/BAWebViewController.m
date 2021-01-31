@@ -541,10 +541,9 @@
     UIAlertAction *aa2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Network diagnosis", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
         
-        
-        [weakSelf webNetworkDetect];
+//        [weakSelf webNetworkDetect];
         // 重新加载网页
-        //        [weakSelf ba_web_loadURLString:kWebRequestUrl];
+        [weakSelf ba_web_loadURLString:kWebRequestUrl];
     }];
     UIAlertAction *aa3 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Option line", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
