@@ -529,28 +529,29 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:versionStr message:nil preferredStyle: UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"UIAlertController - 取消");
     }];
-    UIAlertAction *aa1 = [UIAlertAction actionWithTitle:@"首页" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+    UIAlertAction *aa1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"首页", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 //        [weakSelf reloadWebView];
         /*! 重新加载网页 */
         [weakSelf ba_web_loadURLString:kWebRequestUrl];
     }];
-    UIAlertAction *aa2 = [UIAlertAction actionWithTitle:@"网络诊断" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"网络诊断", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
         
         /*! 重新加载网页 */
         [weakSelf ba_web_loadURLString:kWebRequestUrl];
 //        [weakSelf webNetworkDetect];
     }];
-    UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa3 = [UIAlertAction actionWithTitle:NSLocalizedString(@"选择线路", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
-    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清除缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:NSLocalizedString(@"清除缓存", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
-    UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa5 = [UIAlertAction actionWithTitle:NSLocalizedString(@"以浏览器开启", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf skipToSafari];
     }];
     
