@@ -34,8 +34,8 @@
     
     BAWebViewController *webVC = [BAWebViewController new];
     webVC.isNavHidden = YES;
-    webVC.ba_web_progressTintColor = [UIColor greenColor];
-    webVC.ba_web_progressTrackTintColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0];
+    webVC.ba_web_progressTintColor = [UIColor colorWithRed:15.0/255 green:98.0/255 blue:253.0/255 alpha:1.0];
+    webVC.ba_web_progressTrackTintColor = [UIColor whiteColor];
     [webVC ba_web_loadURLString:kWebRequestUrl];
     
 //        ViewController *vcc = [[ViewController alloc] init];

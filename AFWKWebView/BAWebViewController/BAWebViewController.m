@@ -360,7 +360,14 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.webView.frame = self.view.bounds;
+    CGFloat heightTop = self.view.bounds.size.height >= 812.0 ? 24 : 0;
+    if (heightTop > 0) {
+        CGRect rect = CGRectMake(0, heightTop, self.view.bounds.size.width, self.view.bounds.size.height-heightTop);
+         self.webView.frame = rect;
+    } else {
+        self.webView.frame = self.view.bounds;
+    }
+    
     
 //    self.webView.frame = CGRectMake(0, 0, BAKit_SCREEN_WIDTH, BAKit_SCREEN_HEIGHT);
     
@@ -483,17 +490,18 @@
     CGFloat width = 55;
     self.dragView = [[WMDragView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
     [self.dragView.button setBackgroundImage:[UIImage imageNamed:@"drag_btn_back"] forState:UIControlStateNormal];
-//    self.dragView.backgroundColor = [UIColor redColor];
+    self.dragView.button.backgroundColor = [UIColor clearColor];
+    self.dragView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.dragView];
     
     CGFloat height = self.view.bounds.size.height -(self.view.bounds.size.height >= 812.0 ? 34 : 0);
-    CGRect rect = CGRectMake(self.view.bounds.size.width -width -10, height - 260, width, width);
+    CGRect rect = CGRectMake(self.view.bounds.size.width -width -10, height - 240, width, width);
     self.dragView.frame = rect;
     
     self.dragView.layer.cornerRadius = width/2;
     self.dragView.layer.masksToBounds = YES;
     self.dragView.layer.borderWidth = 1;
-    self.dragView.layer.borderColor = [UIColor purpleColor].CGColor;
+    self.dragView.layer.borderColor = [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:0.5].CGColor;
 
     __weak typeof(self) weakSelf = self;
     self.dragView.clickDragViewBlock = ^(WMDragView *dragView){
