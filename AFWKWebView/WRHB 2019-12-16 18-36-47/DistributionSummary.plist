@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WRHB.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>355037268D08E70321266062A3B1017545F5D341</string>
+				<key>dateExpires</key>
+				<string>2020/12/7</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>9TSZYWVJCJ.com.yipin.WRHB</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>9TSZYWVJCJ</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>9TSZYWVJCJ.com.yipin.WRHB</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>WRHB.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>ca72b46a-ff87-47e1-a857-c3f187757885</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>9TSZYWVJCJ</string>
+				<key>name</key>
+				<string>Shexue Gao</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
