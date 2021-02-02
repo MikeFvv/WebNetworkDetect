@@ -127,30 +127,30 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
-    NSLog(@"url:%@",url);
-    NSLog(@"scheme:%@",url.scheme);
-    NSLog(@"query:%@",url.query);
-    NSLog(@"options:%@",options);
-    return YES;
-}
-
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
-     if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
-         NSURL *webpageURL = userActivity.webpageURL;
-         NSString *host = webpageURL.host;
-        // 在这里写需要的逻辑，比如跳转到某个详情页
-        if ([host isEqualToString:@"www.aa.tk"]) {
-
-        } else{
-            [[UIApplication sharedApplication] openURL:webpageURL options:@{} completionHandler:^(BOOL success) {
-
-             }];
-        }
-     }
-     return YES;
- }
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
+//    NSLog(@"url:%@",url);
+//    NSLog(@"scheme:%@",url.scheme);
+//    NSLog(@"query:%@",url.query);
+//    NSLog(@"options:%@",options);
+//    return YES;
+//}
+//
+//
+//- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+//     if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+//         NSURL *webpageURL = userActivity.webpageURL;
+//         NSString *host = webpageURL.host;
+//        // 在这里写需要的逻辑，比如跳转到某个详情页
+//        if ([host isEqualToString:@"www.aa.tk"]) {
+//
+//        } else{
+//            [[UIApplication sharedApplication] openURL:webpageURL options:@{} completionHandler:^(BOOL success) {
+//
+//             }];
+//        }
+//     }
+//     return YES;
+// }
 
 
 @end

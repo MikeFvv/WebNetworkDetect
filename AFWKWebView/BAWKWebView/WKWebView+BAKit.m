@@ -259,6 +259,13 @@
 //    NSLog(@"URL scheme2:%@", self.ba_web_urlScheme);
 //    NSLog(@"URL query: %@", url_query);
     
+    //如果url是很奇怪的就不push
+    if ([url.absoluteString isEqualToString:@"about:blank"]) {
+        //        NSLog(@"about blank!! return");
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
+    
     if ([url_scheme isEqualToString:self.ba_web_urlScheme])
     {
         if (self.ba_web_decidePolicyForNavigationActionBlock)
@@ -272,7 +279,7 @@
     // APPStore
     if ([url.absoluteString containsString:@"itunes.apple.com"])
     {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+        [BAKit_SharedApplication openURL:url options:@{} completionHandler:nil];
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }
@@ -282,7 +289,18 @@
     {
         if ([BAKit_SharedApplication canOpenURL:url])
         {
-            [BAKit_SharedApplication openURL:url];
+            [BAKit_SharedApplication openURL:url options:@{} completionHandler:nil];
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
+    }
+    
+    // 调用Telegram
+    if ([url.scheme isEqualToString:@"tg"])
+    {
+        if ([BAKit_SharedApplication canOpenURL:url])
+        {
+            [BAKit_SharedApplication openURL:url options:@{} completionHandler:nil];
             decisionHandler(WKNavigationActionPolicyCancel);
             return;
         }
