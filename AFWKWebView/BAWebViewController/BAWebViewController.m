@@ -32,10 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
+    //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
     
     [self setupUI];
     [self setUIView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -44,11 +45,11 @@
     if (_isNavHidden == YES) {
         self.navigationController.navigationBarHidden = YES;
         //创建一个高20的假状态栏
-//        UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
-//        //设置成绿色
-//        statusBarView.backgroundColor=[UIColor whiteColor];
-//        // 添加到 navigationBar 上
-//        [self.view addSubview:statusBarView];
+        //        UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+        //        //设置成绿色
+        //        statusBarView.backgroundColor=[UIColor whiteColor];
+        //        // 添加到 navigationBar 上
+        //        [self.view addSubview:statusBarView];
     }else{
         self.navigationController.navigationBarHidden = NO;
     }
@@ -66,7 +67,7 @@
     BAKit_WeakSelf;
     self.webView.ba_web_didStartBlock = ^(WKWebView *webView, WKNavigation *navigation) {
         
-//        BAKit_StrongSelf
+        //        BAKit_StrongSelf
         NSLog(@"开始加载网页");
     };
     
@@ -74,7 +75,7 @@
         NSLog(@"加载网页结束");
         
         // WKWebview 禁止长按(超链接、图片、文本...)弹出效果
-        [webView ba_web_stringByEvaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'" completionHandler:nil];
+        //        [webView ba_web_stringByEvaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'" completionHandler:nil];
     };
     
     self.webView.ba_web_isLoadingBlock = ^(BOOL isLoading, CGFloat progress) {
@@ -98,6 +99,46 @@
     self.webView.ba_web_getCurrentUrlBlock = ^(NSURL * _Nonnull currentUrl) {
         BAKit_StrongSelf
         self.ba_web_currentUrl = currentUrl;
+    };
+    
+    
+    
+    // 必须要先设定 要拦截的 urlScheme，然后再处理 回调
+    self.webView.ba_web_urlScheme = @"mailto";
+    self.webView.ba_web_decidePolicyForNavigationActionBlock = ^(NSURL *currentUrl) {
+        
+        BAKit_StrongSelf
+        // 判断 host 是否对应，然后做相应处理
+        if ([currentUrl.host isEqualToString:@"shareClick"])
+        {
+            // 拦截到 URL 中的分享 内容
+            //            [self ba_shareClickWithUrl:currentUrl];
+        } else if ([currentUrl.absoluteString hasPrefix:@"mailto:"]) {  // 跳转到邮箱 发邮件
+            
+            //创建可变的地址字符串对象
+            NSMutableString *mailUrl = [[NSMutableString alloc] init];
+            //添加收件人,如有多个收件人，可以使用componentsJoinedByString方法连接，连接符为","
+            //        NSString *recipients = @"sparkle_ds@163.com";
+            [mailUrl appendFormat:@"%@?", currentUrl.absoluteString];
+            
+            //        //添加抄送人
+            //        NSString *ccRecipients = @"1622849369@qq.com";
+            //        [mailUrl appendFormat:@"&cc=%@", ccRecipients];
+            //        //添加密送人
+            //        NSString *bccRecipients = @"15690725786@163.com";
+            //        [mailUrl appendFormat:@"&bcc=%@", bccRecipients];
+            
+            
+            //添加邮件主题
+            [mailUrl appendFormat:@"&subject=%@",@""];
+            
+            
+            //添加邮件内容
+            //        [mailUrl appendString:@""];
+            //跳转到系统邮件App发送邮件
+            NSString *emailPath = [mailUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:emailPath] options:@{} completionHandler:nil];
+        }
     };
 }
 
@@ -123,19 +164,19 @@
             [BAKit_NSUserDefaults registerDefaults:dictionary];
             [BAKit_NSUserDefaults synchronize];
             if (([[UIDevice currentDevice] systemVersion].floatValue >= 9.0)) {
-                 [self.webView setCustomUserAgent:customUserAgent];
+                [self.webView setCustomUserAgent:customUserAgent];
             }
-           
+            
             [self ba_reload];
         }
-
+        
     }];
 }
 
 - (void)ba_reload
 {
     [self.webView ba_web_reload];
-//    [self changeNavigatorUserAgent];
+    //    [self changeNavigatorUserAgent];
 }
 
 - (void)ba_web_progressShow
@@ -340,7 +381,7 @@
         }
         else if (buttonIndex == 2)
         {
-
+            
         }
         else if (buttonIndex == 3)
         {
@@ -363,13 +404,13 @@
     CGFloat heightTop = self.view.bounds.size.height >= 812.0 ? 24 : 0;
     if (heightTop > 0) {
         CGRect rect = CGRectMake(0, heightTop, self.view.bounds.size.width, self.view.bounds.size.height-heightTop);
-         self.webView.frame = rect;
+        self.webView.frame = rect;
     } else {
         self.webView.frame = self.view.bounds;
     }
     
     
-//    self.webView.frame = CGRectMake(0, 0, BAKit_SCREEN_WIDTH, BAKit_SCREEN_HEIGHT);
+    //    self.webView.frame = CGRectMake(0, 0, BAKit_SCREEN_WIDTH, BAKit_SCREEN_HEIGHT);
     
     CGFloat height = self.view.bounds.size.height >= 812.0 ? 44 : 20;
     self.progressView.frame = CGRectMake(0, height, BAKit_SCREEN_WIDTH, 20);
@@ -390,15 +431,15 @@
         self.webView.autoresizesSubviews = YES;
         //        self.wkWebView.scrollView.alwaysBounceVertical = YES;
         
-//        [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'"];
+        //        [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'"];
         
-//        [self.webView ba_web_stringByEvaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'" completionHandler:nil];
+        //        [self.webView ba_web_stringByEvaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none'" completionHandler:nil];
         
         
         
         [self.view addSubview:self.webView];
         
-//        [self changeNavigatorUserAgent];
+        //        [self changeNavigatorUserAgent];
     }
     return _webView;
 }
@@ -415,7 +456,7 @@
         _webConfig = [[WKWebViewConfiguration alloc] init];
         _webConfig.allowsInlineMediaPlayback = YES;
         
-//        _webConfig.allowsPictureInPictureMediaPlayback = YES;
+        //        _webConfig.allowsPictureInPictureMediaPlayback = YES;
         
         // 通过 JS 与 webView 内容交互
         // 注入 JS 对象名称 senderModel，当 JS 通过 senderModel 来调用时，我们可以在WKScriptMessageHandler 代理中接收到
@@ -426,7 +467,7 @@
         // 初始化偏好设置属性：preferences
         _webConfig.preferences = [WKPreferences new];
         // The minimum font size in points default is 0;
-//        _webConfig.preferences.minimumFontSize = 40;
+        //        _webConfig.preferences.minimumFontSize = 40;
         // 是否支持 JavaScript
         _webConfig.preferences.javaScriptEnabled = YES;
         // 不通过用户交互，是否可以打开窗口
@@ -443,10 +484,10 @@
         _progressView.tintColor = BAKit_Color_Green_pod;
         _progressView.trackTintColor = BAKit_Color_Gray_8_pod;
         
-//        _progressView.backgroundColor =[UIColor redColor];
+        //        _progressView.backgroundColor =[UIColor redColor];
         
         self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
-
+        
         [self.view addSubview:_progressView];
     }
     return _progressView;
@@ -455,14 +496,14 @@
 - (void)setBa_web_progressTintColor:(UIColor *)ba_web_progressTintColor
 {
     _ba_web_progressTintColor = ba_web_progressTintColor;
-
+    
     self.progressView.progressTintColor = ba_web_progressTintColor;
 }
 
 - (void)setBa_web_progressTrackTintColor:(UIColor *)ba_web_progressTrackTintColor
 {
     _ba_web_progressTrackTintColor = ba_web_progressTrackTintColor;
-
+    
     self.progressView.trackTintColor = ba_web_progressTrackTintColor;
 }
 
@@ -501,23 +542,23 @@
     self.dragView.layer.cornerRadius = width/2;
     self.dragView.layer.masksToBounds = YES;
     self.dragView.layer.borderWidth = 1;
-    self.dragView.layer.borderColor = [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:0.5].CGColor;
-
+    self.dragView.layer.borderColor = [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:0.6].CGColor;
+    
     __weak typeof(self) weakSelf = self;
     self.dragView.clickDragViewBlock = ^(WMDragView *dragView){
-//        [weakSelf actionSheepView];
+        //        [weakSelf actionSheepView];
         [weakSelf showUIAlertController];
-//        NSLog(@"clickDragViewBlock");
+        //        NSLog(@"clickDragViewBlock");
     };
-
+    
     self.dragView.beginDragBlock = ^(WMDragView *dragView) {
         NSLog(@"开始拖曳");
     };
-
+    
     self.dragView.endDragBlock = ^(WMDragView *dragView) {
         NSLog(@"结束拖曳");
     };
-
+    
     self.dragView.duringDragBlock = ^(WMDragView *dragView) {
         NSLog(@"拖曳中...");
     };
@@ -542,14 +583,14 @@
     }];
     
     UIAlertAction *aa1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Home", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [weakSelf reloadWebView];
+        //        [weakSelf reloadWebView];
         // 重新加载网页
         [weakSelf ba_web_loadURLString:kWebRequestUrl];
     }];
     UIAlertAction *aa2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Network diagnosis", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
         
-//        [weakSelf webNetworkDetect];
+        //        [weakSelf webNetworkDetect];
         // 重新加载网页
         [weakSelf ba_web_loadURLString:kWebRequestUrl];
     }];
@@ -584,10 +625,10 @@
 
 - (void)skipToSafari
 {
-   NSURL *url = [NSURL URLWithString:kWebRequestUrl];
+    NSURL *url = [NSURL URLWithString:kWebRequestUrl];
     
     [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-    //成功后的回调
+        //成功后的回调
         if (!success) {
             //失败后的回调
         }
@@ -597,7 +638,7 @@
 - (void)reloadWebView {
     /// 强制刷新
     [self.webView evaluateJavaScript:[NSString stringWithFormat:@"javascript:window.location.reload(true);"] completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
-
+        
     }];
 }
 

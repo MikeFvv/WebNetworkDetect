@@ -75,6 +75,10 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self setUIView];
 }
 
+
+
+   
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -236,6 +240,37 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         //        NSLog(@"about blank!! return");
         return;
     }
+    
+    // 跳转到邮箱 发邮件
+    if ([request.URL.absoluteString hasPrefix:@"mailto:"]) {
+        //创建可变的地址字符串对象
+        NSMutableString *mailUrl = [[NSMutableString alloc] init];
+        //添加收件人,如有多个收件人，可以使用componentsJoinedByString方法连接，连接符为","
+//        NSString *recipients = @"sparkle_ds@163.com";
+        [mailUrl appendFormat:@"%@?", request.URL.absoluteString];
+        
+//        //添加抄送人
+//        NSString *ccRecipients = @"1622849369@qq.com";
+//        [mailUrl appendFormat:@"&cc=%@", ccRecipients];
+//        //添加密送人
+//        NSString *bccRecipients = @"15690725786@163.com";
+//        [mailUrl appendFormat:@"&bcc=%@", bccRecipients];
+        
+        
+        //添加邮件主题
+        [mailUrl appendFormat:@"&subject=%@",@""];
+        
+        
+        //添加邮件内容
+//        [mailUrl appendString:@""];
+        //跳转到系统邮件App发送邮件
+        NSString *emailPath = [mailUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:emailPath] options:@{} completionHandler:nil];
+        return;
+    }
+    
+    
+    
     //如果url一样就不进行push
     if ([lastRequest.URL.absoluteString isEqualToString:request.URL.absoluteString]) {
         return;
@@ -342,7 +377,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 // 内容加载失败时候调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    NSLog(@"页面加载超时");
+    NSLog(@"页面加载超时"); // mailto
 }
 
 //跳转失败的时候调用
@@ -535,21 +570,23 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 
 
+#pragma mark -  浮动按钮
 - (void)setUIView {
     CGFloat width = 55;
     self.dragView = [[WMDragView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
     [self.dragView.button setBackgroundImage:[UIImage imageNamed:@"drag_btn_back"] forState:UIControlStateNormal];
-    self.dragView.backgroundColor = [UIColor redColor];
+    self.dragView.button.backgroundColor = [UIColor clearColor];
+    self.dragView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.dragView];
     
     CGFloat height = self.view.bounds.size.height -(self.view.bounds.size.height >= 812.0 ? 34 : 0);
-    CGRect rect = CGRectMake(self.view.bounds.size.width -width -10, height - 300, width, width);
+    CGRect rect = CGRectMake(self.view.bounds.size.width -width -10, height - 240, width, width);
     self.dragView.frame = rect;
     
     self.dragView.layer.cornerRadius = width/2;
     self.dragView.layer.masksToBounds = YES;
     self.dragView.layer.borderWidth = 1;
-    self.dragView.layer.borderColor = [UIColor purpleColor].CGColor;
+    self.dragView.layer.borderColor = [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:0.6].CGColor;
 
     __weak typeof(self) weakSelf = self;
     self.dragView.clickDragViewBlock = ^(WMDragView *dragView){
@@ -585,23 +622,35 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:versionStr message:nil preferredStyle: UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"UIAlertController - 取消");
     }];
-    UIAlertAction *aa1 = [UIAlertAction actionWithTitle:@"首页" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf reloadWebView];
+    
+    UIAlertAction *aa1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Home", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [weakSelf reloadWebView];
+        // 重新加载网页
+        //创建一个NSURLRequest 的对象
+        NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+        //加载网页
+        [self.wkWebView loadRequest:Request_zsj];
     }];
-    UIAlertAction *aa2 = [UIAlertAction actionWithTitle:@"网络诊断" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Network diagnosis", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"-");
-        [weakSelf webNetworkDetect];
+        
+//        [weakSelf webNetworkDetect];
+        // 重新加载网页
+        //创建一个NSURLRequest 的对象
+        NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+        //加载网页
+        [self.wkWebView loadRequest:Request_zsj];
     }];
-    UIAlertAction *aa3 = [UIAlertAction actionWithTitle:@"选择线路" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa3 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Option line", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
-    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:@"清除缓存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa4 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Clear cache", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf reloadWebView];
     }];
-    UIAlertAction *aa5 = [UIAlertAction actionWithTitle:@"以浏览器开启" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *aa5 = [UIAlertAction actionWithTitle:NSLocalizedString(@"Open with broswer", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf skipToSafari];
     }];
     
@@ -642,6 +691,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
     }];
 }
+
 
 
 @end

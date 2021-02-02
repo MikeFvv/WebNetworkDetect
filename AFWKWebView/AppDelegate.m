@@ -26,10 +26,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-//    WKWebViewController *web = [[WKWebViewController alloc] init];
-//    web.isNavHidden = YES;
-//    [web loadWebURLSring:kWebRequestUrl];
-//    _webView = web;
+//    WKWebViewController *webVC = [[WKWebViewController alloc] init];
+//    webVC.isNavHidden = YES;
+//    [webVC loadWebURLSring:kWebRequestUrl];
+//    _webView = webVC;
     
     
     BAWebViewController *webVC = [BAWebViewController new];
